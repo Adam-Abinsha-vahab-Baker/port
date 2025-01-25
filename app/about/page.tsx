@@ -53,6 +53,7 @@ export default function About() {
             </div>
             <div className="w-full md:w-1/2 md:pl-12">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                 <h1 className="text-5xl > Under production</h1>
                 <h1 className="text-5xl font-bold mb-4">Adam Abinsha Vahab</h1>
                 <h2 className="text-3xl text-blue-400 mb-4">Everything Computer Science.</h2>
                 <p className="text-xl text-gray-300 mb-6">
