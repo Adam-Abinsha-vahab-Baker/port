@@ -1,10 +1,14 @@
 "use client"
-
+import Image from 'next/image';
 import { useState, useRef, Suspense } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { OrbitControls, useGLTF } from "@react-three/drei"
 import { motion, useScroll, useTransform } from "framer-motion"
 import type * as THREE from "three"
+import eng from "@/app/assets/eng.jpg"
+import GradientText from '@/components/shiny';
+ // Ensure the correct path to the component
+
 
 function Model() {
   const { scene } = useGLTF("/nintendo_switch_diorama.glb")
@@ -44,11 +48,16 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-32 px-6 bg-gradient-to-r from-black via-gray-600 to-gray-900">
+      <section className="py-32 px-6 bg-gradient-to-r from-black to-gray-900">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-7xl md:text-8xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-        Tap into the frequency!
-          </h1>
+        <GradientText
+colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+animationSpeed={3}
+showBorder={false}
+className="custom-class text-8xl font-bold"
+>
+Technology meets Art
+</GradientText>
           <p className="mt-8 text-2xl text-gray-300 max-w-3xl mx-auto">
         AI/ML Engineer & Full Stack Developer crafting innovative solutions at the intersection of artificial
         intelligence and web technologies.
@@ -57,17 +66,27 @@ export default function Home() {
       </section>
 
       {/* Personal Journey Section */}
-      <section className="py-24 px-4 bg-muted/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">My Journey</h2>
-          <p className="text-lg leading-relaxed text-muted-foreground">
-            With a passion for technology and innovation, I've dedicated my career to pushing the boundaries of what's
-            possible in software development. From developing cutting-edge AI solutions to building scalable web
-            applications, my journey has been driven by a constant desire to learn and create meaningful impact through
-            technology.
-          </p>
-        </div>
-      </section>
+    <section className="py-24 px-4 bg-muted/5 relative">
+      <div className="max-w-4xl mx-auto text-right relative z-10">
+        <h2 className="text-4xl font-bold mb-8">My Journey</h2>
+        <p className="text-lg leading-relaxed text-right text-muted-foreground">
+          With a passion for technology and innovation, I've dedicated my career to pushing the boundaries of what's
+          possible in software development. From developing cutting-edge AI solutions to building scalable web
+          applications, my journey has been driven by a constant desire to learn and create meaningful impact through
+          technology.
+        </p>
+      </div>
+      <div className="absolute inset-0 right-0 w-1/2 h-full opacity-50 transition-opacity duration-700">
+        <Image
+          src={eng}
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="left"
+          quality={100}
+        />
+      </div>
+    </section>
 
       {/* Expertise Section */}
       <section id="expertise" className="relative min-h-[600px] overflow-hidden">
@@ -201,4 +220,3 @@ export default function Home() {
     </div>
   )
 }
-

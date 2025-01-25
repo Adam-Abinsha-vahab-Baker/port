@@ -53,7 +53,7 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact</h3>
                 <div className="space-y-2">
-                  <p className="text-muted-foreground">adam.baker@example.com</p>
+                  <p className="text-muted-foreground">adam.baker@evebyadam.co.uk</p>
                 </div>
               </div>
               
@@ -71,7 +71,7 @@ export default function RootLayout({
               
               <div>
                 <h3 className="text-lg font-semibold mb-4">Location</h3>
-                <p className="text-muted-foreground">San Francisco Bay Area</p>
+                <p className="text-muted-foreground">Hertfordshire England</p>
                 <p className="text-muted-foreground mt-2">Available for remote work worldwide</p>
               </div>
             </div>
